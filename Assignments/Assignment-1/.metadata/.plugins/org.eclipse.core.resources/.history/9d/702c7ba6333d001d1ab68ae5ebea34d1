@@ -1,0 +1,14 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PersonTest {
+
+	@Test
+	void test() {
+//		Person p = new Person("Ryan", 20);
+//		p.changeDogsName("Fred");
+//		assertEquals()
+	}
+
+}

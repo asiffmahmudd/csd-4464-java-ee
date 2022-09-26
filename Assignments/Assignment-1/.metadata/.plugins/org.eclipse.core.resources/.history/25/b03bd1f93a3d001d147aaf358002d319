@@ -1,0 +1,15 @@
+package assignment1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Person p1 = new Person("Alexa", 25);
+		try {
+			p1.changeDogsName("Tim");
+		}
+		catch(Exception e) {
+			System.out.println("Unable to change dog's name. " + e.getMessage());
+		}
+	}
+
+}

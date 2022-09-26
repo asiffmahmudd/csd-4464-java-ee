@@ -1,0 +1,23 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PersonWithoutDogTest {
+
+	@Test
+	void personWithoutDog() {
+		Person p = new Person("Ryan", 20);
+		RuntimeException r = assertThrows(RuntimeException.class, () -> {
+			p.changeDogsName("Fred");
+		}, "Runtime Exception was expected");
+	}
+	
+	@Test
+	void personWithDog() {
+		Dog d = new Dog("Kai", 9);
+		Person p = new Person("Ryan", 20, d);
+		p.changeDogsName("Fred");
+		assertEquals(p.getDog().get().getName(), "Fred");
+	}
+
+}

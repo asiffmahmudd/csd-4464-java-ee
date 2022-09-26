@@ -1,0 +1,15 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PersonWithoutDogTest {
+
+	@Test
+	void test() {
+		Person p = new Person("Ryan", 20);
+		RuntimeException r = assertThrows(RuntimeException.class, () -> {
+			p.changeDogsName("Fred");
+		});
+	}
+
+}

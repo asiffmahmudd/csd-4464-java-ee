@@ -1,0 +1,15 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PersonTest {
+
+	@Test
+	void test() {
+		Dog d = new Dog("Kai", 9);
+		Person p = new Person("Ryan", 20, d);
+		p.changeDogsName("Fred");
+		assertEquals(p.getDog().get().getName(), "as");
+	}
+
+}
