@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "authorId": "100.1",
+        "postContent": "Lorem ipsum dolerum"
+    },
+    {
+        "id": "2",
+        "authorId": "100.2",
+        "postContent": "Dolerum ipsum lorem"
+    },
+    {
+        "id": "3",
+        "authorId": "100.3",
+        "postContent": "post content"
+    }
+]
