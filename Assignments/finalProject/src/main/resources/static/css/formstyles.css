@@ -1,0 +1,11 @@
+.btn-submit{
+	background-color: #b8996b !important;
+	border: none !important;
+	width: 100px !important;
+	font-weight: bold !important;
+}
+
+.form-group{
+	text-align: left !important;
+	font-weight: bold !important;
+}
