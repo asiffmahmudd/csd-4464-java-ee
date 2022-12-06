@@ -43,8 +43,8 @@ public class ProductControllerTest {
 	
 	@Test
 	public void productPostTest() throws Exception {
-		Product expectedProduct = new Product("Banana", 2, 3, "Fruit");
-		mockMvc.perform(post("/addproduct").param("name", "Banana").param("price", "2.0").param("stock", "3").param("department", "Fruit"))
+		Product expectedProduct = new Product("Milk", 2, 3, "Dairy");
+		mockMvc.perform(post("/addproduct").param("name", "Milk").param("price", "2.0").param("stock", "3").param("department", "Dairy"))
 		.andExpect(status().isOk())
 		.andExpect(view().name("productlist"))
 		.andExpect(model().attribute("product", expectedProduct));
@@ -54,9 +54,9 @@ public class ProductControllerTest {
 	
 	@Test
 	public void addPostTest_InvalidProduct() throws Exception {
-		Product expectedProduct = new Product("Strawberry", -1, -2, "Fruit");
+		Product expectedProduct = new Product("Milk", -1, -2, "Dairy");
 		
-		mockMvc.perform(post("/addproduct").param("name", "Strawberry").param("price", "-1").param("stock", "-2").param("department", "Fruit"))
+		mockMvc.perform(post("/addproduct").param("name", "Milk").param("price", "-1").param("stock", "-2").param("department", "Dairy"))
 		.andExpect(status().isOk())
 		.andExpect(view().name("productlist"))
 		.andExpect(model().attribute("product", expectedProduct));
@@ -67,7 +67,7 @@ public class ProductControllerTest {
 	@Test
 	public void listProductTest() throws Exception {
 		List<Product> expectedList = new ArrayList<>();
-		expectedList.add(new Product("Banana", 2, 3, "Fruit"));
+		expectedList.add(new Product("Eggs", 2, 3, "Fruit"));
 		
 		Mockito.when(productRepo.findAll()).thenReturn(expectedList);
 		

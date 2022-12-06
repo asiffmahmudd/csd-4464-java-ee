@@ -11,7 +11,7 @@
 - Created "productlist.html" page for viewing added products through the form
 
 # must take an optional get param to filter the list by an attribute  [4]
-- created an api to get the list of products from the database. Currently I have added 5 departments(Grocery, Fruits, Meat, Fish, Other).
+- created an api to get the list of products from the database. Currently I have added 5 departments(Grocery, Dairy, Meat, Fish, Other).
   Use url "http://localhost:8080/products?department=Grocery" to get the products from "Grocery" department
 
 # There must be an API that returns the number of page hits since the server was online
@@ -24,3 +24,19 @@
 
 # use of lombok in data classes [3]
 - Used lombok annotations in "Product.java" class
+
+# Classes should have unit tests [14]
+- created "ProductControllerTest.java", "ProductTest.java", "HitCounterTest.java" for testing different classes
+
+
+
+
+
+
+
+
+
+
+
+
+
