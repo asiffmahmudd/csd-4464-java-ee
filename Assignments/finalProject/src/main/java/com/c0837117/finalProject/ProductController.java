@@ -43,9 +43,9 @@ public class ProductController {
 		if(bindingResult.hasErrors()) {
 			return "productform";
 		} else {
-			this.productCache.storeProduct(toSave);
-//			this.productRepo.save(toSave);
-			return "productlist";
+//			this.productCache.storeProduct(toSave);
+			this.productRepo.save(toSave);
+			return "productForm";
 		}
 	}
 	
@@ -57,12 +57,12 @@ public class ProductController {
 
 		
 		if(param == null) {
-//			model.addAttribute("products", productRepo.findAll());
-			model.addAttribute("products", productCache.getAllProducts());
+			model.addAttribute("products", productRepo.findAll());
+//			model.addAttribute("products", productCache.getAllProducts());
 		}
 		else {
-//			model.addAttribute("products", productRepo.findProductByDept(param));
-			model.addAttribute("products", productCache.getProductsByDepartment(param));
+			model.addAttribute("products", productRepo.findProductByDept(param));
+//			model.addAttribute("products", productCache.getProductsByDepartment(param));
 		}
 		
 		return "productlist";
