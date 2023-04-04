@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2> List of all Users </h2>
+	<table>
+		<tr th:each="user: ${users}">
+			<td th:text="${user.name}" />
+			<td th:text="${user.age}" />
+			<td th:text="${user.getOccupation().getSalary()}" />
+		</tr>
+	</table>
+	
+	<p>Most paid occupation: <span id="mostpaid" th:text="${mostpaid}"></p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	function ajaxCall(){
+		$.ajax({
+        	url:'http://localhost:8080/mostpaid',
+        	type: "GET",
+            success: function (data) {
+                $("#mostpaid").text(data.toString())
+            },
+            error: function (error) {
+                console.log(`Error ${error}`);
+            }
+    	})
+	}
+	$(document).ready(function () {
+	    setInterval(ajaxCall, 2000);
+	});
+</script>
+</html>
